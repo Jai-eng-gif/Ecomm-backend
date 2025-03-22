@@ -1,13 +1,13 @@
 const express = require('express');
 const productRoutes = require('./routes/productRoutes.js');
 const app = express();
+require('./config/db.js'); // Database connection
 
 const cors = require('cors');
 
 app.use(express.json());
 app.use(cors())
 
-require('./config/db.js'); // Database connection
 app.get('/', (req, res) => {
   res.send('API is running...');
 });
