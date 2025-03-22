@@ -8,6 +8,9 @@ app.use(express.json());
 app.use(cors())
 
 require('./config/db.js'); // Database connection
+app.get('/', (req, res) => {
+  res.send('API is running...');
+});
 
 app.use('/api/products', productRoutes);
 
